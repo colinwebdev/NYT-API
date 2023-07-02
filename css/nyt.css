@@ -1,0 +1,304 @@
+@font-face {
+  font-family: "chomsky";
+  src: url("../fonts/Chomsky.otf");
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(226, 211, 204);
+  min-height: 100vh;
+  background-image: linear-gradient(90deg, rgba(239, 234, 231, 0.5) 10px, transparent 50px), linear-gradient(rgba(180, 152, 140, 0.5) 10px, transparent 70px), linear-gradient(90deg, transparent 93%, rgb(180, 152, 140)), linear-gradient(transparent 93%, rgba(180, 152, 140, 0.5));
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(38, 32, 29);
+  font-size: 16px;
+}
+
+a.cardLink {
+  color: rgb(38, 32, 29);
+  text-decoration: none;
+  display: block;
+}
+
+.wrap {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.wrap h1 {
+  font-family: "chomsky";
+  font-size: 5.5vw;
+  font-weight: 100;
+}
+.wrap h2 {
+  font-size: 4vw;
+  font-family: "chomsky";
+  font-weight: 100;
+  margin-top: -2.5vw;
+  margin-right: 5%;
+  text-transform: capitalize;
+  color: rgb(72, 58, 52);
+}
+.wrap div:not(.title) {
+  width: 200px;
+}
+.wrap div:not(.title).box {
+  border: 2px solid rgb(38, 32, 29);
+  text-align: center;
+  padding: 1rem;
+}
+.wrap .title {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.wrap .title a {
+  text-decoration: none;
+  color: rgb(72, 58, 52);
+}
+
+.noStories {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+select {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.bar {
+  border: 2px solid rgb(38, 32, 29);
+  border-top-width: 1px;
+  border-left: none;
+  border-right: none;
+  margin: 1rem 2rem 0 2rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+h1#firstHeadline {
+  font-size: 3rem;
+  font-weight: 100;
+  text-align: center;
+  font-style: italic;
+  padding: 1rem 0 1rem 0;
+  text-transform: uppercase;
+  color: rgb(72, 58, 52);
+}
+
+h2#firstSubHead {
+  font-size: 2rem;
+  font-weight: 100;
+  padding: 0 2rem 2rem 2rem;
+  color: rgb(72, 58, 52);
+  text-align: center;
+}
+
+#leftCol, #rightCol {
+  width: 25%;
+  padding: 0 1rem 1rem 1rem;
+}
+
+#leftCol, #rightCol, #centerLeft, #centerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#centerLeft, #centerRight {
+  width: 50%;
+  padding-top: 2rem;
+  flex-grow: 1;
+}
+
+#centerLeft {
+  padding-right: 1rem;
+}
+
+#centerRight {
+  padding-left: 1rem;
+}
+
+#centerCols {
+  display: flex;
+  flex-grow: 1;
+}
+
+#leftCol, #centerLeft, #center {
+  border-right: 1px solid rgb(72, 58, 52);
+}
+
+#firstStory {
+  padding: 0 1rem 1rem 1rem;
+  border-bottom: 2px solid rgb(72, 58, 52);
+  margin-bottom: 1rem;
+  position: relative;
+}
+#firstStory:after {
+  content: "";
+  border-bottom: 3px solid rgb(72, 58, 52);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+#center {
+  width: 50%;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#container {
+  display: flex;
+}
+#container .card {
+  overflow: hidden;
+  position: relative;
+}
+#container .card h2 {
+  color: rgb(72, 58, 52);
+  font-size: 1.25rem;
+  font-weight: 100;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgb(72, 58, 52);
+  border-image: linear-gradient(90deg, transparent 20%, rgb(72, 58, 52) 20%, rgb(72, 58, 52) 80%, transparent 80%) 1;
+  margin-bottom: 1rem;
+}
+#container img {
+  margin: 0 auto;
+  max-width: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(80%);
+  opacity: 0.95;
+  mix-blend-mode: multiply;
+  transition: all 0.3s ease-in-out;
+  display: block;
+}
+#container img:hover {
+  filter: grayscale(20%) contrast(100%);
+  opacity: 1;
+}
+
+.caption {
+  font-size: 0.9rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(72, 58, 52);
+  border-image: linear-gradient(90deg, transparent 20%, rgb(72, 58, 52) 20%, rgb(72, 58, 52) 80%, transparent 80%) 1;
+}
+
+.byLine {
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.photoCredit {
+  font-size: 0.8rem;
+  color: rgb(72, 58, 52);
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+.storySection {
+  text-align: right;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: rgb(72, 58, 52);
+}
+.storySection span {
+  font-style: italic;
+  cursor: pointer;
+}
+.storySection span:hover {
+  text-decoration: underline;
+}
+
+.bottomDiv {
+  margin-top: 1rem;
+  border-top: 1px solid rgb(72, 58, 52);
+}
+
+.pubDate {
+  text-align: right;
+  margin: 0.5rem;
+  font-size: 0.8rem;
+}
+.pubDate span {
+  font-style: italic;
+}
+
+#sectionSelect {
+  color: rgba(72, 58, 52, 0.7);
+  border-bottom: 2px solid rgba(239, 234, 231, 0.3);
+  border-right: 1px solid rgba(239, 234, 231, 0.4);
+  border-left: 2px solid rgba(72, 58, 52, 0.4);
+  border-top: 1px solid rgba(38, 32, 29, 0.4);
+  transition: all 0.5s ease-out;
+  background-color: rgba(180, 152, 140, 0.1);
+  position: relative;
+  cursor: pointer;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+#sectionSelect span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+}
+#sectionSelect span i {
+  color: rgba(72, 58, 52, 0.5);
+}
+#sectionSelect:hover {
+  background-color: rgba(180, 152, 140, 0.5);
+}
+
+#section {
+  position: absolute;
+  list-style-type: none;
+  width: 100%;
+  color: rgb(72, 58, 52);
+  background-color: rgb(226, 211, 204);
+  top: 3px;
+  right: 3px;
+  z-index: 100;
+  font-size: 0.8rem;
+  box-shadow: 0 0 20px rgba(72, 58, 52, 0.5);
+}
+#section li {
+  padding: 0.25rem 0.5rem;
+  display: block;
+  transition: background-color 0.2s ease-out;
+  cursor: pointer;
+}
+#section li:hover {
+  width: calc(100% + 10px);
+  height: calc(0.9rem + 10px);
+  margin-left: -5px;
+  margin-top: -2px;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(72, 58, 52, 0.5);
+  background-color: rgb(239, 234, 231);
+}
+
+.hide {
+  display: none !important;
+}
+
+/*# sourceMappingURL=nyt.css.map */

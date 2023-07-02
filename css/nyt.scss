@@ -1,0 +1,315 @@
+@font-face  {
+    font-family: 'chomsky';
+    src: url('../fonts/Chomsky.otf');
+}
+
+$ground: rgb(226, 211, 204);
+$white: rgb(239, 234, 231);
+$darkFade: rgb(180, 152, 140);
+$mid: rgb(72, 58, 52);
+$black: rgb(38, 32, 29);
+$halfLine: linear-gradient(90deg, transparent 20%, $mid 20%, $mid 80%, transparent 80%);
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $ground;
+    min-height: 100vh;
+    background-image: 
+        linear-gradient(90deg, rgba($white, .5) 10px, transparent 50px),
+        linear-gradient(rgba($darkFade, .5) 10px, transparent 70px),
+        linear-gradient(90deg, transparent 93%, $darkFade),
+        linear-gradient(transparent 93%, rgba($darkFade, .5));
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: $black;
+    font-size: 16px;
+}
+
+a.cardLink {
+    color: $black;
+    text-decoration: none;
+    display: block;
+}
+
+.wrap {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+    h1 {
+        font-family: 'chomsky';
+        font-size: 5.5vw;
+        font-weight: 100;
+    }
+    h2 {
+        font-size: 4vw;
+        font-family: 'chomsky';
+        font-weight: 100;
+        margin-top: -2.5vw;
+        margin-right: 5%;
+        text-transform: capitalize;
+        color: $mid;
+    }
+    div:not(.title) {
+        width: 200px;
+        &.box{
+            border: 2px solid $black;
+            text-align: center;
+            padding: 1rem;
+        }
+    }
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        a{
+            text-decoration: none;
+            color: $mid;
+        }
+    }
+}
+
+.noStories {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+select {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.bar {
+    border: 2px solid $black;
+    border-top-width: 1px;
+    border-left: none;
+    border-right: none;
+    margin: 1rem 2rem 0 2rem;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+h1#firstHeadline {
+    font-size: 3rem;
+    font-weight: 100;
+    text-align: center;
+    font-style: italic;
+    padding: 1rem 0 1rem 0;
+    text-transform: uppercase;
+    color: $mid;
+}
+
+h2#firstSubHead {
+    font-size: 2rem;
+    font-weight: 100;
+    padding: 0 2rem 2rem 2rem;
+    color: $mid;
+    text-align: center;
+}
+
+#leftCol, #rightCol {
+    width: 25%;
+    padding: 0 1rem 1rem 1rem;
+}
+
+#leftCol, #rightCol, #centerLeft, #centerRight {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#centerLeft, #centerRight {
+    width: 50%;
+    padding-top: 2rem;
+    flex-grow: 1;
+}
+
+#centerLeft{
+    padding-right: 1rem;
+}
+
+#centerRight {
+    padding-left: 1rem;
+}
+
+#centerCols {
+    display: flex;
+    flex-grow: 1;
+}
+
+#leftCol, #centerLeft, #center {
+    border-right: 1px solid $mid;
+}
+
+#firstStory {
+    padding: 0 1rem 1rem 1rem;
+    border-bottom: 2px solid $mid;
+    margin-bottom: 1rem;
+    position: relative;
+    &:after {
+        content: '';
+        border-bottom: 3px solid $mid;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+    }
+}
+
+#center {
+    width: 50%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    display: flex;
+    .card {
+        overflow: hidden;
+        position: relative;
+        h2 {
+            color: $mid;
+            font-size: 1.25rem;
+            font-weight: 100;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid $mid;
+            border-image: $halfLine 1;
+            margin-bottom: 1rem;
+        }
+    }
+
+    img {
+        margin: 0 auto;
+        max-width: 100%;
+        object-fit: cover;
+        filter:grayscale(100%) contrast(80%);
+        opacity: .95;
+        mix-blend-mode: multiply;
+        transition: all .3s ease-in-out;
+        display: block;
+        &:hover {
+            filter:grayscale(20%) contrast(100%);
+            opacity: 1;
+        }
+    }
+}
+
+.caption {
+    font-size: .9rem;
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    border-bottom: 1px solid $mid;
+    border-image: $halfLine 1;
+}
+
+.byLine {
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: .5rem;
+}
+
+.photoCredit {
+    font-size: .8rem;
+    color: $mid;
+    text-align: right;
+    margin-bottom: .5rem;
+}
+
+.storySection {
+    text-align: right;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: $mid;
+    span {
+        font-style: italic;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.bottomDiv {
+    margin-top: 1rem;
+    border-top: 1px solid $mid;
+}
+
+.pubDate{
+    text-align: right;
+    margin: .5rem;
+    font-size: .8rem;
+    span {
+        font-style: italic;
+    }
+}
+
+#sectionSelect {
+    color: rgba($mid, .7);
+    border-bottom: 2px solid rgba($white, .3);
+    border-right: 1px solid rgba($white, .4);
+    border-left: 2px solid rgba($mid, .4);
+    border-top: 1px solid rgba($black, .4);
+    transition: all .5s ease-out;
+    background-color: rgba($darkFade, .1);
+    position: relative;
+    cursor: pointer;
+    margin: .5rem 1rem .5rem 0;
+    span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .25rem .5rem;
+        i {
+            color: rgba($mid, .5);
+        }
+    }
+    &:hover {
+        background-color: rgba($darkFade, .5);
+    }
+}
+
+#section {
+    position: absolute;
+    list-style-type: none;
+    width: 100%;
+    color: $mid;
+    background-color: $ground;
+    top: 3px;
+    right: 3px;
+    z-index: 100;
+    font-size: .8rem;
+    box-shadow: 0 0 20px rgba($mid, .5);
+    li {
+        padding: .25rem .5rem;
+        display: block;
+        transition: background-color .2s ease-out;
+        cursor: pointer;
+        &:hover {
+            width: calc(100% + 10px);
+            height: calc(.9rem + 10px);
+            margin-left: -5px;
+            margin-top: -2px;
+            font-size: 1rem;
+            box-shadow: 0 0 10px rgba($mid, .5);
+            background-color: $white;
+        }
+    }
+}
+
+.hide {
+    display: none !important;
+}

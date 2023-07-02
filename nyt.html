@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/375d969cd5.js" crossorigin="anonymous"></script>
+    <title>NYT API</title>
+    <link rel="stylesheet" href="css/nyt.css">
+    <script defer src="js/nyt.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <div class="box">
+                "All the News<br>Fit for the API"
+            </div>
+            <div class="title">
+                <a href=""><h1>The New York Times API</h1></a>
+            </div>
+            <div class="edition">
+                <p><strong>Spring 2023 Edition</strong></p>
+                <p>Assigned in Bruce Elgort's CTEC 126 class, coded by Colin Moore</p>
+                <div id="sectionSelect"><span>Choose a section <i class="fa-solid fa-angle-down"></i></span>
+                    <ul id="section" class="hide">
+                    </ul></div>
+            </div>
+        </div>
+        <div class="bar">
+            <p>VOL<strong>.</strong> I <strong>. . .</strong> No<strong>.</strong> 1</p>
+            <p>CLARK COLLEGE, <span class="todayDate"></span></p>
+            <p>$6<strong>.</strong>00</p>
+        </div>
+    </header>
+<main>
+<div class="noStories"></div>
+<h1 id="firstHeadline"></h1>
+<div id="container">
+    <div id="leftCol"></div>
+    <div id="center">
+        <div id="firstStory"></div>
+        <div id="centerCols">
+            <div id="centerLeft"></div>
+            <div id="centerRight"></div>
+        </div>
+    </div>
+    <div id="rightCol"></div>
+</div>
+</main>
+
+</body>
+
+</html>
